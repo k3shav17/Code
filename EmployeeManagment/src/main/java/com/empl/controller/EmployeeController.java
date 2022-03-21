@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.empl.dao.EmployeeRepository;
 import com.empl.entity.Employee;
+import com.empl.exceptions.EmployeeNotFoundException;
+import com.empl.exceptions.IdNotFoundException;
 
 @RestController
 public class EmployeeController {
@@ -40,17 +42,25 @@ public class EmployeeController {
 		return employeeRepo.findAll();
 	}
 
-	@GetMapping("/empl/{id}") // Request URL to get a specific employee with id.
-	public Optional<Employee> gettingEmplById(@PathVariable int id) {
-		return employeeRepo.findById(id);
+	@GetMapping("/empl/{id}")
+	public ResponseEntity<Employee> getEmplById(@PathVariable int id) {
+
+		Optional<Employee> presentOrNot = employeeRepo.findById(id);
+		if (presentOrNot.isEmpty()) {
+			throw new EmployeeNotFoundException();
+		}
+
+		return new ResponseEntity<>(presentOrNot.get(), HttpStatus.OK);
 	}
 
 	@GetMapping("/emplornot/{id}") // Request URL to check whether an employee exists with the id mentioned
-	public String isEmplExists(@PathVariable int id) {
-		if (employeeRepo.existsById(id)) {
-			return "Yes the employee with " + id + " does exists";
+	public ResponseEntity<String> isEmplExists(@PathVariable int id) {
+		
+		Optional<Employee> isExists = employeeRepo.findById(id);
+		if (isExists.isEmpty()) {
+			throw new IdNotFoundException();
 		}
-		return "No employee exists with the " + id + " mentioned.";
+		return new ResponseEntity<>("Employee with id: " + isExists.get().getEmpId() + " does exists", HttpStatus.OK);
 	}
 
 	@GetMapping("/emp/{salary}") // Request URL to list all the employees with salary mentioned
