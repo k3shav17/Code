@@ -16,7 +16,7 @@ public class WeatherController {
 		RestTemplate restTemplate = new RestTemplate();
 
 		ResponseEntity<Object> response = restTemplate.getForEntity("https://api.openweathermap.org/data/2.5/weather?q="
-				+ city + "&appid=df2934df5409500c5ff7aa24a94b81f6", Object.class);
+				+ city + "&appid=API_KEY", Object.class);
 		return response;
 	}
 
