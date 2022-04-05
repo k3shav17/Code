@@ -42,17 +42,24 @@ public class PerfectNumber {
 
 		List<Integer> divisors = new ArrayList<>();
 		int i = 1;
+		int sum = 0;
 		while (i < number) {
 
 			if (number % i == 0) {
 				divisors.add(i);
+				sum = sum + i;
 			}
 
 			i++;
 		}
 
 		System.out.println(divisors);
-		System.out.println(perfectOrNot(divisors, number));
+		if (sum == number) {
+			System.out.println(true);
+		} else
+			System.out.println(false);
+		System.out.println(sum);
+//		System.out.println(perfectOrNot(divisors, number));
 		in.close();
 	}
 
