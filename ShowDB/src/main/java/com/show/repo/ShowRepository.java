@@ -12,6 +12,8 @@ public interface ShowRepository extends JpaRepository<Show, Integer> {
 
 	List<Show> findAllByReleaseYear(int year);
 
-//	@Query(value = "SELECT * FROM Show s WHERE s.actors = 1 AND s.director = 2")
-//	List<Show> findShowByActorsAndDirector(String actor, String director);
+	List<Show> findAllShowByDirectorIgnoreCase(String director);
+
+//	Iterable<Show> findAllShowSortedByReleaseYear();
+
 }

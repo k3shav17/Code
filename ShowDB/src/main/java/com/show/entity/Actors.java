@@ -36,12 +36,4 @@ public class Actors implements Serializable {
 		this.actorName = actorName;
 	}
 
-//	public List<Show> getShows() {
-//		return shows;
-//	}
-//
-//	public void setShows(List<Show> shows) {
-//		this.shows = shows;
-//	}
-
 }
