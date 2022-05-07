@@ -1,6 +1,7 @@
 package com.dailybyte;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,7 +11,7 @@ Note: The rightmost element should be replaced with -1.
 Ex: Given the following nums…
 
 nums = [5, 2, 3], return [3, 3, -1].
-Ex: Given the following nums…
+Ex: Given the following nums
 
 nums = [10, 2, 5, 8, 9], return [9,9,9,9,-1].
 */
@@ -20,7 +21,7 @@ public class UpdateArray {
 
 		int max = nums.get(0);
 
-		List<Integer> newNums = new ArrayList<Integer>();
+		List<Integer> newNums = new LinkedList<Integer>();
 
 		for (int i = 0; i < nums.size(); i++) {
 

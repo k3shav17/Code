@@ -1,6 +1,7 @@
 package com.dailybyte;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,22 +15,30 @@ return [[2,2,5],[2,3,4],[3,6],[4,5]].*/
 
 public class SumToTarget {
 
-	public static List<List<Integer>> sumOfLists(int target, ArrayList<Integer> numbers) {
+	public static List<List<Integer>> sumOfLists(int target, List<Integer> numbers) {
 
 		List<List<Integer>> sumList = new ArrayList<>();
-		
+
+		Collections.sort(numbers);
+
 		for (int i = 0; i < numbers.size(); i++) {
-			ArrayList<Integer> list = new ArrayList<>();
-			
-			for (int j = 1; j < numbers.size(); j++) {
-				if (numbers.get(i) + numbers.get(j) == target) {
-					list.add(numbers.get(i));
-					list.add(numbers.get(j));
+			List<Integer> combinations = new ArrayList<Integer>();
+
+			for (int j = i + 1; j < numbers.size(); j++) {
+				for (int k = j + 1; k < numbers.size(); k++) {
+					if (numbers.get(i) + numbers.get(j) + numbers.get(k) == target) {
+						combinations.add(numbers.get(i));
+						combinations.add(numbers.get(j));
+						combinations.add(numbers.get(k));
+					}
 				}
 			}
-			sumList.add(list);
+
+			sumList.add(combinations);
 		}
+
 		return sumList;
+
 	}
 
 	public static void main(String[] args) {
@@ -39,7 +48,7 @@ public class SumToTarget {
 		int size = in.nextInt();
 
 		System.out.println("Enter the elements in to the array");
-		ArrayList<Integer> numbers = new ArrayList<>();
+		List<Integer> numbers = new ArrayList<>();
 
 		for (int i = 0; i < size; i++) {
 			numbers.add(in.nextInt());

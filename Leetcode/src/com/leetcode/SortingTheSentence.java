@@ -5,7 +5,6 @@ public class SortingTheSentence {
 	public static void main(String[] args) {
 
 		String word = "is2 sentence4 This1 a3";
-		String another = word.substring(0);
 		System.out.println(sortSentence(word));
 	}
 
@@ -22,6 +21,5 @@ public class SortingTheSentence {
 			}
 		}
 		return sentence;
-
 	}
 }
