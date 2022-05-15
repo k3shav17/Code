@@ -1,6 +1,7 @@
-package com.dailybyte;
+package com.hashmaps;
 
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 /*This question is asked by Amazon. 
  * You are at a birthday party and are asked to distribute cake to your guests. 
@@ -16,42 +17,28 @@ appetite = [1, 2, 3], cake = [1, 2, 3], return 3.
 Ex: Given the following arrays appetite and cake…
 
 appetite = [3, 4, 5], cake = [2], return 0.*/
-
 public class BirthdayCake {
-
-	public static int noOfGuestsSatisfied(int[] appetite, int[] cake) {
-
-		int satisfied = 0;
+	
+	public static int noOfStatisfiedGuests(int[] appetite, int[] cake) {
+		
+		Map<Integer, Integer> guest = new HashMap<Integer, Integer>();
+		int count = 0;
+		
+		for (int i = 0; i < appetite.length; i++) {
+			guest.put(appetite[i], i);
+		}
+		
 		for (int i = 0; i < cake.length; i++) {
-			for (int j = i; j <= i; j++) {
-				if (appetite[i] <= cake[j])
-					satisfied++;
+			if (guest.containsKey(cake[i])) {
+				count++;
 			}
 		}
-		return satisfied;
+		return count;
 	}
-
 	public static void main(String[] args) {
-
-		System.out.println("Enter the appetite of the guests and no of guests");
-		Scanner in = new Scanner(System.in);
-		int size = in.nextInt();
-		int[] appetite = new int[size];
-
-		for (int i = 0; i < appetite.length; i++) {
-			appetite[i] = in.nextInt();
-		}
-
-		System.out.println("Enter the no of cake pieces and the size of pieces");
-		int pieces = in.nextInt();
-		int[] cake = new int[pieces];
-
-		for (int i = 0; i < cake.length; i++) {
-			cake[i] = in.nextInt();
-		}
-		System.out.println(BirthdayCake.noOfGuestsSatisfied(appetite, cake));
-
-		in.close();
+		
+		int[] appetite = {3, 4, 5};
+		int[] cake = {2};
+		System.out.println(noOfStatisfiedGuests(appetite, cake));
 	}
-
 }
