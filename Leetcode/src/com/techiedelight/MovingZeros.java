@@ -25,7 +25,7 @@ public class MovingZeros {
 			}
 		}
 
-		for (int i = list.size() - 1, j = 1; j <= count; i--, j++) {
+		for (int j = 1; j <= count; j++) {
 			list.add(0);
 		}
 		return list;

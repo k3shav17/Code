@@ -8,7 +8,6 @@ package com.dailybyte;
 public class DictionaryWords {
 	public static void main(String[] args) {
 
-		System.out.println("Enter a string and an array of strings");
 		String s = "thedailybyte";
 		String[] dictionary = { "the", "daily", "byte" };
 		boolean flag = false;

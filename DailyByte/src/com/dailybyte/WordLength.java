@@ -1,6 +1,5 @@
 package com.dailybyte;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -13,22 +12,31 @@ s = "The Daily Byte", return 4 (because "Byte" is four characters long).*/
 
 public class WordLength {
 
+	/* Previous method */
+//	public static int lengthOfTheWord(String sentence) {
+//
+//		String temp = "";
+//
+//		ArrayList<String> wordArray = new ArrayList<>();
+//		for (int i = 0; i < sentence.length(); i++) {
+//			if (sentence.charAt(i) != ' ') {
+//				temp += sentence.charAt(i);
+//			} else {
+//				wordArray.add(temp);
+//				temp = "";
+//			}
+//		}
+//		wordArray.add(temp);
+//		return wordArray.get(wordArray.size() - 1).length();
+//
+//	}
+	
+	/* New method */
 	public static int lengthOfTheWord(String sentence) {
-
-		String temp = "";
-
-		ArrayList<String> wordArray = new ArrayList<>();
-		for (int i = 0; i < sentence.length(); i++) {
-			if (sentence.charAt(i) != ' ') {
-				temp += sentence.charAt(i);
-			} else {
-				wordArray.add(temp);
-				temp = "";
-			}
-		}
-		wordArray.add(temp);
-		return wordArray.get(wordArray.size() - 1).length();
-
+		
+		String[] temp = sentence.trim().split(" ");
+		
+		return temp[temp.length - 1].length();
 	}
 
 	public static void main(String[] args) {
