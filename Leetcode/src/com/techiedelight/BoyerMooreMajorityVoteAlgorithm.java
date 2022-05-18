@@ -1,9 +1,7 @@
 package com.techiedelight;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 /*
  * Given an integer array containing duplicates, return the majority element if present. 
