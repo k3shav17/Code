@@ -30,7 +30,6 @@ public class EquilibriumIndex {
 	}
 
 	public static void main(String[] args) {
-
 		int[] arr = { 0, -3, 5, -4, -2, 3, 1, 0 };
 		System.out.println(equilibrium(arr));
 	}

@@ -1,9 +1,7 @@
 package com.techiedelight;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /*
@@ -23,7 +21,6 @@ public class PairsWithDiffK {
 		Set<Integer> uniquePairs = new HashSet<>();
 
 		for (int i : arr) {
-
 			if (uniquePairs.contains(i - target)) {
 				System.out.printf("(%d, %d)", i, i - target);
 				System.out.println();

@@ -27,5 +27,4 @@ public class MaxOfProduct {
 		}
 		System.out.println(pairs);
 	}
-
 }
