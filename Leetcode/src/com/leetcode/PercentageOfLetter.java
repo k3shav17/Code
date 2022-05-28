@@ -1,0 +1,24 @@
+package com.leetcode;
+
+public class PercentageOfLetter {
+
+	public static int percentageLetter(String s, char letter) {
+
+		int count = 0;
+
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == letter)
+				count++;
+		}
+
+		System.out.println((double)count / s.length());
+
+		double result = ((double)count / s.length()) * 100;
+		return (int) result;
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println(percentageLetter("foobar", 'o'));
+	}
+}
