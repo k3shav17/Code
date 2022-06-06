@@ -20,6 +20,7 @@ public class ClockAngle {
 		if ((int) angle == 360)
 			System.out.println(0);
 		else
-			System.out.println(angle);
+			System.out.println(Math.abs(angle));
+		in.close();
 	}
 }
