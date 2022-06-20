@@ -88,3 +88,6 @@
 /DecodeCharacters.class
 /LexicographicalOrder.class
 /NodeSwap.class
+/KDivisibility.class
+/MergeString.class
+/SumUniqueElements.class
