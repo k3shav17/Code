@@ -28,12 +28,28 @@ class MyLinkedList {
 		}
 	}
 
-
 	public void swappedList(Node node) {
 		Node temp = node;
-		
+
 		while (temp != null) {
-			
+
+		}
+	}
+
+	public void delete(int data) {
+
+		if (head == null) {
+			return;
+		} else if (head.data == data) {
+			head = head.next;
+		} else {
+			Node temp = head;
+			while (temp.next != null) {
+				if (temp.next.data == data) {
+					temp.next = temp.next.next;
+				}
+				temp = temp.next;
+			}
 		}
 	}
 

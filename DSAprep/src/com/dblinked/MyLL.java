@@ -11,6 +11,9 @@ public class MyLL {
 		list.insert(4);
 
 		list.printList();
+		list.delete(3);
+		System.out.println();
+		list.printList();
 		System.out.println();
 		list.swappedList(list.head);
 		list.printList();
