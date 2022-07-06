@@ -49,9 +49,9 @@ public class UndirectedGraphs {
 
 		Map<Character, List<Character>> graph = new HashMap<>();
 
-		for (List l : edges) {
-			Character a = (Character) l.get(0);
-			Character b = (Character) l.get(1);
+		for (List<Character> l : edges) {
+			Character a = l.get(0);
+			Character b = l.get(1);
 
 			if (!(graph.containsKey(a)))
 				graph.put(a, new ArrayList<Character>());
