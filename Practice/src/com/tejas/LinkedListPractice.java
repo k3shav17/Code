@@ -12,7 +12,7 @@ public class LinkedListPractice {
 		list.insert(4);
 
 		list.printList();
-		System.out.println(list.delete(3));
+		System.out.println(list.delete(4));
 		list.printList();
 
 		list.reverse();
